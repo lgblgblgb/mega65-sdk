@@ -44,7 +44,7 @@ install-m65dbg: all-m65dbg
 
 all-xemu:
 	make -C xemu TARGETS="c65 mega65" PREFIX=$(runprefix) all
-	make -C xemu/rom all
+	make -C xemu/rom c65-system.rom
 
 install-xemu: all-xemu
 	install -s -D -m 0755 xemu/build/bin/xc65.native $(prefix)/bin/xc65
